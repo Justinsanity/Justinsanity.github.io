@@ -23,6 +23,11 @@
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
 	<script type="text/javascript" src="js/jquery.transit.js"></script>
+
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+  	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  	<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">    
 </head>
 
 <body>
@@ -55,10 +60,18 @@
 </div>
 
 <script>
-	var small = false;
+	var to_left = false;
+	var intro_clicked =false, member_clicked = false;
 
-	$('#intro, #member, #product').click(function(){
-		if(small == false){
+	$('#intro, #member, #product').click(function(e){
+		
+		/* DEBUG
+		 console.log(this);
+		 console.log(e);
+		 */
+		 
+		if(to_left == false){
+			to_left = true;
 			// move to leftest-top
 			$('.logo').transit({ x: '-500px'}, 1000);
 
@@ -70,8 +83,48 @@
 					"flex-direction": "column"
 				});
 			$('.slogan').fadeOut("slow");
-			small = true;
 		}
+
+		switch(this.id){
+			case 'intro':
+				if($('svg'))
+					$('svg').hide();
+
+				if(!intro_clicked)
+				{
+					intro_clicked = true;
+					$('.container').append('<div class="intro">We are Justinsanity!!!</div>');
+					$('.intro').css({
+      							"position": "absolute",
+      							"top": "5%",
+      							"left": "30%",
+      							"width": "960px",
+      							"height": "600px",
+      							"box-shadow": "0px 0px 50px #888888"
+							 	});
+				}
+				else
+				{
+					$('.intro').show();
+				}
+				break;
+			case 'member':
+				if($('.intro'))
+					$('.intro').hide();
+
+				if(!member_clicked)
+				{
+					member_clicked = true;
+					$('head').append('<link rel="stylesheet" href="css/member.css">');
+					$('body').append('<script src="js/member.js"><\/script>');
+				}
+				else
+				{
+					$('svg').show();
+				}
+				break;
+		}
+
 	});
 </script>
 </body>
