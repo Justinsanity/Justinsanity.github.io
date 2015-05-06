@@ -21,7 +21,8 @@
       .attr("height", height)
       .style("position", "absolute")
       .style("top", "5%")
-      .style("left", "30%");
+      .style("left", "25%"); 
+  // TODO: text on svg
 
   /* tooltip when mouse over node */
   var tip = d3.tip()

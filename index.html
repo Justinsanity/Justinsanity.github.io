@@ -61,7 +61,9 @@
 
 <script>
 	var to_left = false;
-	var intro_clicked =false, member_clicked = false;
+	var intro_clicked =false, 
+		member_clicked = false,
+		product_clicked = false;
 
 	$('#intro, #member, #product').click(function(e){
 		
@@ -90,18 +92,23 @@
 				if($('svg'))
 					$('svg').hide();
 
+				if($('.product'))
+					$('.product').hide();
+
 				if(!intro_clicked)
 				{
 					intro_clicked = true;
-					$('.container').append('<div class="intro">We are Justinsanity!!!</div>');
+					$('.container').append('<div class="intro">We are Justinsanity!!!<br>\
+						From Taichung, Taipei, and Kaohsiung~</div>');
 					$('.intro').css({
       							"position": "absolute",
       							"top": "5%",
-      							"left": "30%",
+      							"left": "25%",
       							"width": "960px",
       							"height": "600px",
       							"box-shadow": "0px 0px 50px #888888"
 							 	});
+					//TODO: text offset
 				}
 				else
 				{
@@ -112,6 +119,9 @@
 				if($('.intro'))
 					$('.intro').hide();
 
+				if($('.product'))
+					$('.product').hide();
+
 				if(!member_clicked)
 				{
 					member_clicked = true;
@@ -121,6 +131,35 @@
 				else
 				{
 					$('svg').show();
+				}
+				break;
+			case 'product':
+				if($('.intro'))
+					$('.intro').hide();
+
+				if($('svg'))
+					$('svg').hide();
+
+				if(!product_clicked)
+				{
+					product_clicked = true;
+					$('.container').append('<div class="product">Products：<br>\
+						<ul>\
+						<li><a href="https://justinsanity.github.io/boo-it">Boo-it!</a></li>\
+						</ul></div>');
+					$('.product').css({
+      							"position": "absolute",
+      							"top": "5%",
+      							"left": "25%",
+      							"width": "960px",
+      							"height": "600px",
+      							"box-shadow": "0px 0px 50px #888888"
+							 	});
+					//TODO: text offset
+				}
+				else
+				{
+					$('.product').show();
 				}
 				break;
 		}
