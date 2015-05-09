@@ -19,6 +19,7 @@
   var svg = d3.select(".container").append("svg")
       .attr("width", width) 
       .attr("height", height)
+      .attr("id", "member")
       .style("position", "absolute")
       .style("top", "5%")
       .style("left", "25%"); 
@@ -42,7 +43,7 @@
    * in miserables.json, we have two arrays nodes[] and links[]
    * so we can access json with graph.nodes, graph.links
    */
-  d3.json("./public/miserables.json", function(error, graph) {
+  d3.json("./public/member.json", function(error, graph) {
     force
         .nodes(graph.nodes)
         .links(graph.links)

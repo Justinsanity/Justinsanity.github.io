@@ -23,7 +23,6 @@
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
 	<script type="text/javascript" src="js/jquery.transit.js"></script>
-
 	<script src="http://d3js.org/d3.v3.min.js"></script>
   	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   	<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
@@ -89,11 +88,11 @@
 
 		switch(this.id){
 			case 'intro':
-				if($('svg'))
-					$('svg').hide();
+				if($('svg#member'))
+					$('svg#member').hide();
 
-				if($('.product'))
-					$('.product').hide();
+				if($('svg#product'))
+					$('svg#product').hide();
 
 				if(!intro_clicked)
 				{
@@ -119,8 +118,8 @@
 				if($('.intro'))
 					$('.intro').hide();
 
-				if($('.product'))
-					$('.product').hide();
+				if($('svg#product'))
+					$('svg#product').hide();
 
 				if(!member_clicked)
 				{
@@ -130,36 +129,25 @@
 				}
 				else
 				{
-					$('svg').show();
+					$('svg#member').show();
 				}
 				break;
 			case 'product':
 				if($('.intro'))
 					$('.intro').hide();
 
-				if($('svg'))
-					$('svg').hide();
+				if($('svg#member'))
+					$('svg#member').hide();
 
 				if(!product_clicked)
 				{
 					product_clicked = true;
-					$('.container').append('<div class="product">Products：<br>\
-						<ul>\
-						<li><a href="https://justinsanity.github.io/boo-it">Boo-it!</a></li>\
-						</ul></div>');
-					$('.product').css({
-      							"position": "absolute",
-      							"top": "5%",
-      							"left": "25%",
-      							"width": "960px",
-      							"height": "600px",
-      							"box-shadow": "0px 0px 50px #888888"
-							 	});
-					//TODO: text offset
+					$('head').append('<link rel="stylesheet" href="css/product.css">');
+					$('body').append('<script src="js/product.js"><\/script>');
 				}
 				else
 				{
-					$('.product').show();
+					$('svg#product').show();
 				}
 				break;
 		}

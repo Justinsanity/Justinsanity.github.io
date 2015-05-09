@@ -1,0 +1,12 @@
+text {
+  font: 10px sans-serif;
+}
+
+/* this make svg circle opacity when mouse over */
+circle:hover {
+  opacity: 0.5;
+}
+
+svg{
+    box-shadow: 0px 0px 50px #888888;
+}

@@ -3,8 +3,7 @@
   }
 
   .node {
-    stroke: #fff;
-    stroke-width: 1.5px;
+    stroke: none;
   }
 
   .link {
