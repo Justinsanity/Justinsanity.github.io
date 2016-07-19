@@ -1,13 +1,15 @@
 {
   "nodes":[
     {"name":"Justinsanity","group":0, "photo": "img/logo_100.jpg","description": "We are Justinsanity!"},
-    {"name":"Veck Hsiao","group":1, "photo": "img/v.jpg", "description": "We are Justinsanity!"},
-    {"name":"Sirius Wang","group":1, "photo": "img/s.jpg", "description": "We are Justinsanity!"},
-    {"name":"Justin Tseng","group":1, "photo": "img/j.jpg", "description": "We are Justinsanity!"}    
+    {"name":"Veck Hsiao","group":1, "photo": "img/veck.jpg", "description": "We are Justinsanity!"},
+    {"name":"Larry Wang","group":1, "photo": "img/larry.jpg", "description": "We are Justinsanity!"},
+    {"name":"Justin Tseng","group":1, "photo": "img/justin.jpg", "description": "We are Justinsanity!"},
+    {"name":"Maja Lin","group":1, "photo": "img/maja.jpg", "description": "We are Justinsanity!"}
   ],
   "links":[
-    {"source":0,"target":1,"value":1},
-    {"source":0,"target":2,"value":2},
-    {"source":0,"target":3,"value":3}
+    {"source":0, "target":1, "value":1},
+    {"source":0, "target":2, "value":2},
+    {"source":0, "target":3, "value":3},
+    {"source":0, "target":4, "value":4}
   ]
 }
